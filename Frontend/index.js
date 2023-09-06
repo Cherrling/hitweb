@@ -23,6 +23,10 @@ $(document).ready(function() {
             }
         });
     });
+    $('#3').click(function(e) {
+        e.preventDefault();
+        window.open("./login.html")
+    });
 
 
 

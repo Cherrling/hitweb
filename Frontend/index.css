@@ -1,10 +1,11 @@
 body {
-    background-color:cornsilk;
+    background-color: cornsilk;
     z-index: 10;
     position: relative;
     text-align: center;
 }
-.button{
+
+.button {
     color: rgb(39, 39, 39);
     background-color: cornsilk;
     border-style: solid;
@@ -18,11 +19,14 @@ body {
     position: relative;
     margin-top: 20px;
 }
-.button:hover,.in:hover{
+
+.button:hover,
+.in:hover {
     background-color: rgb(39, 39, 39);
     color: cornsilk;
 }
-#cover{
+
+#cover {
     position: initial;
     top: 0;
     left: 0;
@@ -32,26 +36,14 @@ body {
     z-index: 1;
     transition-duration: 0.5s;
 }
-#toloadin,#author{
-    height: 40%;
-    width:60%;
-    position: fixed;
-    left: 20%;
-    top: -100%;
-    border-radius: 5%;
-    padding: 10px;
-    background-color: rgb(248, 255, 153);
-    z-index: 200;
-    box-shadow: rgb(39, 39, 39) 5px 5px 5px;
-    transition-duration: 0.5s;
-    text-align: center;
-}
-#tanchuin{
+
+#tanchuin {
     height: 40%;
     width: 80%;
 }
-.in{
-    width: 150px; 
+
+.in {
+    width: 150px;
     height: 80px;
-    background-color:rgb(248, 255, 153)
+    background-color: rgb(248, 255, 153)
 }
