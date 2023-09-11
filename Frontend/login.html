@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>login</title>
+    <style>
+      body {
+        background-color: cornsilk;
+        background-color: rgb(63, 63, 63);
+      }
+      .box {
+        background-color: rgb(206, 206, 206);
+        border-radius: 20px;
+        border: 2px;
+        border-style: solid;
+        border-color: black;
+        position: fixed;
+        top: 30%;
+        left: 40%;
+        width: 20%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .input{
+        width: 200px;
+        max-width: 90%;
+        background-color: rgb(255, 255, 255);
+        border-width: 1px;
+        border-radius: 2px;
+    }
+
+      .input-box,
+      .btn-box {
+        text-align: center;
+        padding-top: 20px;
+      }
+
+      .button {
+        color: black;
+        font-weight: 500;
+        font-size: 20px;
+        background-color: rgb(255, 255, 255);
+        border-color: black;
+        text-align: center;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 10px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: fit-content;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .button:hover{
+        transition: 0.2s;
+        color: rgb(255, 255, 255);
+        background-color: black;
+        text-align: center;
+        border-style: solid;
+        border-width: 2px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: fit-content;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    
+    
+    
+    }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2 style="text-align: center">Login</h2>
+      <div class="input-box">
+        <label for="">账号</label>
+        <input class="input" id="username" type="text" />
+      </div>
+      <div class="input-box">
+        <label for="">密码</label>
+        <input class="input" id="password" type="password" />
+      </div>
+      <div class="button">登录</div>
+    </div>
+  </body>
+</html>
