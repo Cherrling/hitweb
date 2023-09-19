@@ -8,9 +8,6 @@ var bodyParser = require('body-parser');
 // 创建 application/x-www-form-urlencoded 编码解析
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-
-
-
 // 配置解析表单数据的中间件
 app.use(express.urlencoded({ extended: false }))
 
@@ -18,23 +15,64 @@ app.use(express.urlencoded({ extended: false }))
 const cors = require('cors')
 app.use(cors())
 
+// -------------------------------
+
+
+
+
+
+
 
 function test(data) {
     console.log('a');
     console.log(data);
 }
 
-
-app.post('/process_post', urlencodedParser, function(req, res) {
+app.post('/login', urlencodedParser, function(req, res) {
 
     // 输出 JSON 格式
     var response = {
-        "first_name": req.body.first_name,
-        "last_name": req.body.last_name
+        "username": req.body.username,
+        "password": req.body.password
     };
+
     console.log(response);
     res.end(JSON.stringify(response));
 })
+
+
+app.post('/testsql', urlencodedParser, function(req, res) {
+    var mysql = require('mysql');
+
+    var connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '123456',
+        port: '3306',
+        database: 'test'
+    });
+
+    connection.connect();
+
+    var sql = 'SELECT * FROM websites';
+    //查
+    connection.query(sql, function(err, result) {
+        if (err) {
+            console.log('[SELECT ERROR] - ', err.message);
+            return;
+        }
+
+        console.log('--------------------------SELECT----------------------------');
+        console.log(result);
+        console.log('------------------------------------------------------------\n\n');
+    });
+
+    connection.end();
+})
+
+
+
+
 
 
 
@@ -50,7 +88,6 @@ app.post('/', function(req, res) {
 
     console.log('server post');
 })
-
 
 
 

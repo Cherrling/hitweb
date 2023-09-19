@@ -1,47 +1,48 @@
 body {
-  background-color: cornsilk;
-  z-index: 10;
-  position: relative;
-  text-align: center;
+    background-color: cornsilk;
+    z-index: 10;
+    position: relative;
+    text-align: center;
 }
+
 .image_box {
-  display: none;
+    display: none;
 }
 
 .button {
-  color: rgb(39, 39, 39);
-  background-color: cornsilk;
-  border-style: solid;
-  border-color: rgb(39, 39, 39);
-  border-width: 5px;
-  width: 200px;
-  height: 100px;
-  min-height: 30px;
-  font-size: 28px;
-  transition-duration: 0.3s;
-  position: relative;
-  margin-top: 20px;
+    color: rgb(39, 39, 39);
+    background-color: cornsilk;
+    border-style: solid;
+    border-color: rgb(39, 39, 39);
+    border-width: 5px;
+    width: 200px;
+    height: 100px;
+    min-height: 30px;
+    font-size: 28px;
+    transition-duration: 0.3s;
+    position: relative;
+    margin-top: 20px;
 }
 
 .button:hover,
 .in:hover {
-  background-color: rgb(39, 39, 39);
-  color: cornsilk;
+    background-color: rgb(39, 39, 39);
+    color: cornsilk;
 }
 
 .button-mini {
-  color: rgb(39, 39, 39);
-  background-color: cornsilk;
-  border-style: solid;
-  border-color: rgb(39, 39, 39);
-  border-width: 2px;
-  min-width: 100px;
-  height: 50px;
-  min-height: 30px;
-  font-size: 18px;
-  transition-duration: 0.3s;
-  position: relative;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+    color: rgb(39, 39, 39);
+    background-color: cornsilk;
+    border-style: solid;
+    border-color: rgb(39, 39, 39);
+    border-width: 2px;
+    min-width: 100px;
+    height: 50px;
+    min-height: 30px;
+    font-size: 18px;
+    transition-duration: 0.3s;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
