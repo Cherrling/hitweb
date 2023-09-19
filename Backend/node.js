@@ -76,21 +76,21 @@ app.post('/testsql', urlencodedParser, function(req, res) {
 
 
 
-app.get('/', function(req, res) {
-    res.send('Hello World get');
-    console.log(req);
-    console.log('server get');
-})
+// app.get('/', function(req, res) {
+//     res.send('Hello World get');
+//     console.log(req);
+//     console.log('server get');
+// })
 
-app.post('/', function(req, res) {
-    res.send('Hello World post');
-    console.log(req.body.data);
+// app.post('/', function(req, res) {
+//     res.send('Hello World post');
+//     console.log(req.body.data);
 
-    console.log('server post');
-})
+//     console.log('server post');
+// })
 
 
-
+app.use(express.static('../Frontend'))
 
 app.listen(3000, () => {
     console.log('express server running at http://127.0.0.1:3000')
