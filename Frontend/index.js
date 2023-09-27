@@ -45,6 +45,11 @@ $(document).ready(function() {
             $("#img_4").slideDown();
         }
     });
+
+
+
+
+
     $("#1").click(function(e) {
         e.preventDefault();
         $.ajax({
@@ -63,6 +68,18 @@ $(document).ready(function() {
             type: "post",
             url: "//127.0.0.1:3000",
             data: { 'data': 111 },
+            dataType: "text",
+            success: function(response) {
+                console.log(response);
+            }
+        });
+    });
+    $("#3").click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "post",
+            url: "//127.0.0.1:3000/login",
+            data: { 'username': 111, 'password': 123456 },
             dataType: "text",
             success: function(response) {
                 console.log(response);

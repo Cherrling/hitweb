@@ -1,17 +1,17 @@
-// µ¼Èë express
+// å¯¼å…¥ express
 const express = require('express')
-    // ´´½¨·şÎñÆ÷ÊµÀı
+    // åˆ›å»ºæœåŠ¡å™¨å®ä¾‹
 const app = express()
 
 var bodyParser = require('body-parser');
 
-// ´´½¨ application/x-www-form-urlencoded ±àÂë½âÎö
+// åˆ›å»º application/x-www-form-urlencoded ç¼–ç è§£æ
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-// ÅäÖÃ½âÎö±íµ¥Êı¾İµÄÖĞ¼ä¼ş
+// é…ç½®è§£æè¡¨å•æ•°æ®çš„ä¸­é—´ä»¶
 app.use(express.urlencoded({ extended: false }))
 
-// Ò»¶¨ÒªÔÚÂ·ÓÉÖ®Ç°£¬ÅäÖÃ cors Õâ¸öÖĞ¼ä¼ş£¬´Ó¶ø½â¾ö½Ó¿Ú¿çÓòµÄÎÊÌâ
+// ä¸€å®šè¦åœ¨è·¯ç”±ä¹‹å‰ï¼Œé…ç½® cors è¿™ä¸ªä¸­é—´ä»¶ï¼Œä»è€Œè§£å†³æ¥å£è·¨åŸŸçš„é—®é¢˜
 const cors = require('cors')
 app.use(cors())
 
@@ -30,14 +30,15 @@ function test(data) {
 
 app.post('/login', urlencodedParser, function(req, res) {
 
-    // Êä³ö JSON ¸ñÊ½
+    // è¾“å‡º JSON æ ¼å¼
     var response = {
         "username": req.body.username,
         "password": req.body.password
     };
 
     console.log(response);
-    res.end(JSON.stringify(response));
+    console.log(req.query);
+    res.send(JSON.stringify(response));
 })
 
 
@@ -55,7 +56,7 @@ app.post('/testsql', urlencodedParser, function(req, res) {
     connection.connect();
 
     var sql = 'SELECT * FROM websites';
-    //²é
+    //æŸ¥
     connection.query(sql, function(err, result) {
         if (err) {
             console.log('[SELECT ERROR] - ', err.message);
@@ -72,22 +73,18 @@ app.post('/testsql', urlencodedParser, function(req, res) {
 
 
 
+app.get('/api', function(req, res) {
+    res.send('Hello World get');
+    console.log(req);
+    console.log('server get');
+})
 
+app.post('/api', function(req, res) {
+    res.send('Hello World post');
+    console.log(req.body.data);
 
-
-
-// app.get('/', function(req, res) {
-//     res.send('Hello World get');
-//     console.log(req);
-//     console.log('server get');
-// })
-
-// app.post('/', function(req, res) {
-//     res.send('Hello World post');
-//     console.log(req.body.data);
-
-//     console.log('server post');
-// })
+    console.log('server post');
+})
 
 
 app.use(express.static('../Frontend'))
