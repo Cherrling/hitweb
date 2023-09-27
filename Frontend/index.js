@@ -5,7 +5,7 @@ $(document).ready(function() {
     });
 
     function showTime() {
-        var endTime = new Date("2023-9-26 00:03:59").getTime();
+        var endTime = new Date("2023-10-11 00:03:59").getTime();
         var newTime = new Date().getTime();
         var diffTime = (endTime - newTime) / 1000;
         $("#hour").text(parseInt(diffTime / 60 / 60));
@@ -14,9 +14,16 @@ $(document).ready(function() {
     }
     setInterval(showTime, 1000);
 
-    $("#img_1").slideDown();
+    $("#img_0").slideDown();
 
 
+    $("#img_btn_0").click(function(e) {
+        e.preventDefault();
+        if ($('#img_0').css('display') == 'none') {
+            $(".image_box").slideUp(500);
+            $("#img_0").slideDown();
+        }
+    });
     $("#img_btn_1").click(function(e) {
         e.preventDefault();
         if ($('#img_1').css('display') == 'none') {

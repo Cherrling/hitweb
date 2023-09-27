@@ -41,6 +41,11 @@ app.post('/login', urlencodedParser, function(req, res) {
     res.send(JSON.stringify(response));
 })
 
+app.post('/weibo', urlencodedParser, function(req, res) {
+    console.log('a');
+    console.log(req.body.content);
+    res.send(req.body.content);
+})
 
 app.post('/testsql', urlencodedParser, function(req, res) {
     var mysql = require('mysql');

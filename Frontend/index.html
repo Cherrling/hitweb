@@ -13,14 +13,23 @@
 </head>
 
 <body>
-    <h2><span>全新SideStory「不义之财」，活动关卡开启</span></h2>
-    <p><b>活动时间：</b>09月05日 16:00 - 09月26日 03:59</p>
+    <h2><span>「纷争演绎」限时活动开启</span></h2>
+    <p><b>关卡开放时间：</b> 09月27日 16:00 -10月11日 03:59</p>
     <p style="font-size: 30px">
         <b>距离活动结束还有：</b><span id="hour"></span>时<span id="minute"></span
       >分<span id="second"></span>秒
     </p>
-
     <br />
+
+    <div class="image_box" id="img_0">
+        <div><img src="./image/纷争演绎_01.png" alt="" /></div>
+        <div>
+            <p>
+                重构实境，踏入消逝的战火<br /> 穿过残垣，冲破硝烟与悲鸣 <br /> 层层推演，因地制宜，不断向战场核心迈进 <br /> 以鏖战熔铸意志，以纷争淬砺使命 <br /> 跨越燃烧的终点，我们已做好准备
+            </p>
+        </div>
+    </div>
+
     <div class="image_box" id="img_1">
         <div><img src="./image/不义之财_01.jpg" alt="" /></div>
         <div>
@@ -52,6 +61,8 @@
             <br />
         </div>
     </div>
+
+    <button id="img_btn_0" class="button-mini">纷争演绎</button>
     <button id="img_btn_1" class="button-mini">不义之财</button>
     <button id="img_btn_2" class="button-mini">蚀刻章套组_不义之财</button>
     <button id="img_btn_3" class="button-mini">探索者的银凇止境</button>
@@ -75,8 +86,12 @@
     <br />
     <button id="more" class="button">更多</button>
     <br />
+    <br />
+    <br />
     <form action="http://127.0.0.1:3000/process_post" method="POST">
-        First Name: <input type="text" name="first_name" /> <br /> Last Name: <input type="text" name="last_name" />
+        First Name: <input type="text" name="first_name" />
+        <br /> Last Name: <input type="text" name="last_name" />
+        <br />
         <input type="submit" value="Submit" />
     </form>
     <br />
