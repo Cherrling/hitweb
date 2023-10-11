@@ -43,7 +43,7 @@ app.post('/testsql', urlencodedParser, function (req, res) {
     user: 'root',
     password: '123456',
     port: '3306',
-    database: 'test'
+    database: 'user'
   })
 
   connection.connect()
