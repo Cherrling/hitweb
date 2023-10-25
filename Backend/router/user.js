@@ -18,15 +18,15 @@ router.post('/reguser',expressJoi(reg_login_schema),userHandler.regUser)
 router.post('/login',userHandler.login)
 
 
-// //注册新用户 路由
+//注册新用户 路由
 //  router.post('/reguser',(req,res)=>{
 //      console.log('get request')
 //      res.send('reguser ok')
 //  })
 
-// //登录 路由
+//登录 路由
 // router.post('/login',(req,res)=>{
-//  res.send('login OK')
+//  res.send('login OK')
 // })
 
 //将路由对象共享出去

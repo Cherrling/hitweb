@@ -24,3 +24,11 @@ exports.reg_login_schema = {
       password,
     },
   }  
+
+
+exports.login = {
+    body: {
+      username,
+      password,
+    },
+  }  

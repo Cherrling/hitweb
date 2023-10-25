@@ -1,4 +1,4 @@
-  // 导入 express 模块
+// 导入 express 模块
 const express = require('express')
 // 创建 express 的服务器实例
 const app = express()
@@ -24,10 +24,14 @@ app.use((req, res, next) => {
     next()
   })
 
+const indexRouter=require('./router/index')
+app.get('/',indexRouter)
 
 // 导入并使用用户路由模块
 const userRouter = require('./router/user')
 app.use('/api', userRouter)
+
+
 
 //错误中间件
 app.use(function(err,req,res,next){
