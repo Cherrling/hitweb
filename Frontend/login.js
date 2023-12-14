@@ -2,11 +2,24 @@ $(document).ready(function() {
 
     $.ajax({
         type: "post",
-        url: "http://192.168.2.17/api/username",
+        url: "http://127.0.0.1/api/username",
         success: function (response) {
             console.log(response);
         }
     });
+
+    $('#2reg').click(function (e) { 
+        e.preventDefault();
+        $('#login-box').slideUp(function () {$('#reg-box').slideDown();  });
+
+    });
+
+    $('#2login').click(function (e) { 
+        e.preventDefault();
+        $('#reg-box').slideUp(function () {$('#login-box').slideDown();  });
+
+    });
+
 
 
     $('#btn-login').click(function(e) {
@@ -18,12 +31,16 @@ $(document).ready(function() {
 
         $.ajax({
             type: "post",
-            url: "http://192.168.2.17/api/login",
+            url: "http://127.0.0.1/api/login",
             data: { 'username': username, 'password': password },
             
             success: function(response) {
-                location.href="../"
                 console.log(response);
+                if(response.status==0){
+                    location.href="../"
+                }else{
+                    alert(response.message)
+                }
             }
         });
 
@@ -40,10 +57,15 @@ $(document).ready(function() {
 
         $.ajax({
             type: "post",
-            url: "http://192.168.2.17/api/reguser",
+            url: "http://127.0.0.1/api/reguser",
             data: { 'username': username, 'password': password },
             
             success: function(response) {
+                if(response.status==0){
+                    $('#reg-box').slideUp(function () {$('#login-box').slideDown();  });
+                }else{
+                    alert(response.message)
+                }
                 console.log(response);
 
             }

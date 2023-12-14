@@ -6,14 +6,17 @@
     <!-- <script src="md5.js"></script> -->
     <!-- <script src="module.js"></script> -->
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="admin.js"></script>
+  <script src="banner.js"></script>
+  <script src="admin.js"></script>
     <link rel="stylesheet" href="index.css" />
     <title>I Am Alive-Hi!</title>
   </head>
 
   <body>
     <div class="banner">
+        <h2 id="lobby" style="position: fixed;left: 0;">记录灵感瞬间</h2>
 
+        <button class="banner-button" id="banner-upload-button">上传文章</button>
       
       <button class="banner-button" id="banner-admin-button">管理面板</button>
       <button class="banner-button" id="banner-login-button">Login</button>
@@ -24,10 +27,9 @@
 
 
 
-    <h2><span>ADMIN</span></h2>
-    <p><b>关卡开放时间：</b> 09月27日 16:00 -10月11日 03:59</p>
+    <h2><span>距离2024还有</span></h2>
     <p style="font-size: 30px">
-      <b>距离活动结束还有：</b><span id="hour"></span>时<span id="minute"></span>分<span id="second"></span>秒
+      <span id="hour"></span>时<span id="minute"></span>分<span id="second"></span>秒
     </p>
     <br />
 

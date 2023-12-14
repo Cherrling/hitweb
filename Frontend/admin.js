@@ -3,11 +3,11 @@ $(document).ready(function () {
   username = "";
   islogin = false;
 
-  checkadmin = 0;
+  checkadmin = 1;
 
   $.ajax({
     type: "post",
-    url: "http://192.168.2.17/api/username",
+    url: "http://127.0.0.1/api/username",
     success: function (response) {
 
       if (response.status == 0) {
@@ -36,7 +36,7 @@ $(document).ready(function () {
 
   $.ajax({
     type: "post",
-    url: "http://192.168.2.17/api/getarticle",
+    url: "http://127.0.0.1/api/getarticle",
     success: function (response) {
 
       if (response.status == 0) {
@@ -111,12 +111,13 @@ $(document).ready(function () {
       console.log(ID);
       $.ajax({
         type: "post",
-        url: "http://192.168.2.17/api/updatearticle",
+        url: "http://127.0.0.1/api/updatearticle",
         data: { 'username': username, "ID": ID ,"show":0},
-  
-        success: function (response) {
-          console.log(response);
-          location.reload();
+        
+        complete: function() {     
+          setTimeout(() => {
+            location.reload()
+          }, 200);
         }
       });
     });
@@ -126,99 +127,20 @@ $(document).ready(function () {
       console.log(ID);
       $.ajax({
         type: "post",
-        url: "http://192.168.2.17/api/updatearticle",
+        url: "http://127.0.0.1/api/updatearticle",
         data: { 'username': username, "ID": ID ,"show":1},
-  
-        success: function (response) {
-          console.log(response);
-          location.reload();
+        complete: function() {     
+          setTimeout(() => {
+            location.reload()
+          }, 200);
         }
+
       });
     });
   }
 
-  $("#banner-login-button").hover(function () {
-    // over
-    if (islogin == 1) {
-      $("#banner-login-button").text("Logout");
-    }
-  }, function () {
-    // out
-    if (islogin == 1) {
-      $("#banner-login-button").text(username);
-
-    }
-
-  }
-  );
-
-  $("#banner-login-button").click(function (e) {
-    e.preventDefault();
-    if (islogin) {
-      $.ajax({
-        type: "post",
-        url: "http://192.168.2.17/api/logout",
-        success: function (response) {
-          location.reload()
-
-        }
-      });
-
-    } else {
-      location.href = "login.html"
-
-    }
-  });
 
 
-
-  function showTime() {
-    var endTime = new Date("2023-10-11 00:03:59").getTime();
-    var newTime = new Date().getTime();
-    var diffTime = (endTime - newTime) / 1000;
-    $("#hour").text(parseInt(diffTime / 60 / 60));
-    $("#minute").text(parseInt((diffTime / 60) % 60));
-    $("#second").text(parseInt(diffTime % 60));
-  }
-  setInterval(showTime, 1000);
-
-  // $("#img_0").slideDown();
-
-  // $("#img_btn_0").click(function (e) {
-  //   e.preventDefault();
-  //   if ($("#img_0").css("display") == "none") {
-  //     $(".image_box").slideUp(500);
-  //     $("#img_0").slideDown();
-  //   }
-  // });
-  // $("#img_btn_1").click(function (e) {
-  //   e.preventDefault();
-  //   if ($("#img_1").css("display") == "none") {
-  //     $(".image_box").slideUp(500);
-  //     $("#img_1").slideDown();
-  //   }
-  // });
-  // $("#img_btn_2").click(function (e) {
-  //   e.preventDefault();
-  //   if ($("#img_2").css("display") == "none") {
-  //     $(".image_box").slideUp(500);
-  //     $("#img_2").slideDown();
-  //   }
-  // });
-  // $("#img_btn_3").click(function (e) {
-  //   e.preventDefault();
-  //   if ($("#img_3").css("display") == "none") {
-  //     $(".image_box").slideUp(500);
-  //     $("#img_3").slideDown();
-  //   }
-  // });
-  // $("#img_btn_4").click(function (e) {
-  //   e.preventDefault();
-  //   if ($("#img_4").css("display") == "none") {
-  //     $(".image_box").slideUp(500);
-  //     $("#img_4").slideDown();
-  //   }
-  // });
 
 
 });
