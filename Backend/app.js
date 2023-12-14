@@ -24,15 +24,15 @@ app.use((req, res, next) => {
     next()
   })
 
-const indexRouter=require('./router/index')
-app.get('/',indexRouter)
+// const indexRouter=require('./router/index')
+// app.get('/',indexRouter)
 
 // 导入并使用用户路由模块
 const userRouter = require('./router/user')
 app.use('/api', userRouter)
 
 
-
+app.use(express.static('../Frontend'))
 //错误中间件
 app.use(function(err,req,res,next){
     //数据验证失败
