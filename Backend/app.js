@@ -24,8 +24,6 @@ app.use((req, res, next) => {
     next()
   })
 
-// const indexRouter=require('./router/index')
-// app.get('/',indexRouter)
 
 // 导入并使用用户路由模块
 const userRouter = require('./router/user')
