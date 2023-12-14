@@ -8,6 +8,15 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.urlencoded({extended:false}))
 
+// TODO_01：请配置 Session 中间件
+const session = require('express-session')
+app.use(
+  session({
+    secret: 'itheima',
+    resave: false,
+    saveUninitialized: true,
+  })
+)
 
 const joi = require('joi')
 
@@ -25,20 +34,22 @@ app.use((req, res, next) => {
   })
 
 
-// 导入并使用用户路由模块
-const userRouter = require('./router/user')
-app.use('/api', userRouter)
-
-
-app.use(express.static('../Frontend'))
-//错误中间件
-app.use(function(err,req,res,next){
+  
+  app.use(express.static('Frontend'))
+  //错误中间件
+  app.use(function(err,req,res,next){
     //数据验证失败
     if (err instanceof joi.ValidationError) return res.cc(err)
     //未知错误
-    res.cc(err)    
-    next()
+  res.cc(err)    
+  next()
 })
+
+
+
+// 导入并使用用户路由模块
+const userRouter = require('./router/api')
+app.use('/api', userRouter)
 
 // write your code here...
 

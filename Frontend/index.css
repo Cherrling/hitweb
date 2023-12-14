@@ -6,7 +6,64 @@ body {
 }
 
 .image_box {
-    display: none;
+    /* display: none; */
+
+}
+
+.banner{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    border-bottom-style: solid;
+    background-color: aliceblue;
+    text-align: right;
+}
+
+.banner-button{
+    color: rgb(39, 39, 39);
+    background-color: transparent;
+    border-style: solid;
+    border-color: rgb(39, 39, 39);
+    border-width: 2px;
+    width: auto;
+    height: 40px;
+    min-height: 30px;
+    font-size: 18px;
+    transition-duration: 0.3s;
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+#banner-admin-button{
+display: none;
+}
+
+.del{
+display: inline-block;}
+
+.details{
+    font-style: oblique;
+
+}
+
+
+.article-box{
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+}
+.article-node-box{
+    display: inline-block;
+    width: 80%;
+    border-radius: 2px;
+    border-style: solid;
+    margin-top: 30px;
+    padding: 10px;
+
 }
 
 .button {
@@ -14,14 +71,14 @@ body {
     background-color: cornsilk;
     border-style: solid;
     border-color: rgb(39, 39, 39);
-    border-width: 5px;
-    width: 200px;
-    height: 100px;
+    border-width: 2px;
+    width: auto;
+    height: 40px;
     min-height: 30px;
-    font-size: 28px;
+    font-size: 18px;
     transition-duration: 0.3s;
     position: relative;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .button:hover,
