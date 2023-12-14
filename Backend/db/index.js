@@ -2,7 +2,7 @@
 const mysql = require('mysql')
 //创建数据库链接对象
 const db = mysql.createPool({
-    host:'192.168.2.17',
+    host:'127.0.0.1',
     port:3306,
     user:'root',
     password:'11223344ww',
